@@ -1,0 +1,417 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "key": {
+                "type": "string",
+                "title": "key"
+            },
+            "commandName": {
+                "type": "string",
+                "title": "HOME_PAGE_DIALOG_CREATE_THEME_NAME"
+            },
+            "preview": {
+                "type": "string",
+                "title": "Preview"            
+            },
+            "commandDescription": {
+                "type": "string",
+                "title": "HOME_PAGE_TABLE_HEAD_DESC",
+                "default": ""
+            },
+            "numberOfParamters": {
+                "type": "string",
+                "title": "ACTIVECARD_NUMBEROFPARAMS"
+            },
+            "commandActionName": {
+                "type": "string",
+                "title": "COMMAND_NAME"
+            },
+            "enabled": {
+                "type": "string",
+                "title": "IS_ENABLED",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "true",
+                    "false"
+                ],
+                "default": "true"
+            }
+        },
+        "required": [
+            "numberOfParamters",
+            "commandActionName",
+            "enabled"
+        ]
+    },
+    "uiSchema": {
+        "ui:order":["key","commandName","preview","commandDescription","numberOfParamters","commandActionName","enabled"],
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "preview": {
+            "ui:field": "previewComponent",
+            "ui:options": {
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "previewTitle":"Preview - {previewTitleKey}",
+                "previewTitleKey":"commandName",
+                "previewLinkTitle":"Click Here ",
+                "labelText":" to Preview",
+                "isEditable": true,
+                "previewType":"image",
+                "template": [
+                    {
+                        "name": "cardsApiUrl",
+                        "value": "{vccApiBaseUrl}/crs/v1/clients/{clientId}/accounts/{accountId}/activecards/meta/name/{cardName}?view=test&channel=CHAT"
+                    },
+                    {
+                        "name": "editUrl",
+                        "value": "{vccAppUrl}/edit#cards&cardId={cardId}"
+                    }
+                ],
+                "imageApi": {
+                    "headers": {
+                        "template": [
+                            {
+                                "name": "apikey",
+                                "value": "{vccApiKey}"
+                            }
+                        ]
+                    },
+                    "imageLink": "viewsData.0.previewImage",
+                    "imageId":  "artifactId"
+                },
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginTop": "-15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px",
+                        "marginTop": "-5px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandDescription": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": false,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "numberOfParamters": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": false,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandActionName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginLeft": "10px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "select",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": false,
+                "fieldSize": [
+                    10,
+                    10
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "10px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "ui:order":["key","commandName","preview","commandDescription","numberOfParamters","commandActionName","enabled"],
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "preview": {
+            "ui:field": "previewComponent",
+            "ui:options": {
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "previewTitle":"Preview - {previewTitleKey}",
+                "previewTitleKey":"commandName",
+                "previewLinkTitle":"Click Here ",
+                "labelText":" to Preview",
+                "isEditable": true,
+                "previewType":"image",
+                "template": [
+                    {
+                        "name": "cardsApiUrl",
+                        "value": "{vccApiBaseUrl}/crs/v1/clients/{clientId}/accounts/{accountId}/activecards/meta/name/{cardName}?view=test&channel=CHAT"
+                    },
+                    {
+                        "name": "editUrl",
+                        "value": "{vccAppUrl}/edit#cards&cardId={cardId}"
+                    }
+                ],
+                "imageApi": {
+                    "headers": {
+                        "template": [
+                            {
+                                "name": "apikey",
+                                "value": "{vccApiKey}"
+                            }
+                        ]
+                    },
+                    "imageLink": "viewsData.0.previewImage",
+                    "imageId":  "artifactId"
+                },
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginTop": "-15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px",
+                        "marginTop": "-5px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandDescription": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "numberOfParamters": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "commandActionName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginLeft": "10px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    10
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateActiveCards_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

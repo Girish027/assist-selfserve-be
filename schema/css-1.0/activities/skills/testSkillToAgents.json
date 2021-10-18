@@ -1,0 +1,251 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "skillId": {
+                "type": "string",
+                "title": "Skill Id"
+            },
+            "skillName": {
+                "type": "string",
+                "title": "Skill Name"
+            },
+            "mapperTitle": {
+                "type": "string",
+                "title": "List of Assigned Agents *"
+            },
+            "ConfigMapper": {
+                "type": "array",
+                "title": "skill selector",
+                "items": {
+                    "users": {
+                        "type": "array",
+                        "items": {
+                            "enum": [],
+                            "type": "string",
+                            "enumNames": []
+                        },
+                        "default": ""
+                    },
+                    "key": {
+                        "type": "array",
+                        "items": {
+                            "enum": [
+                                "HIGH",
+                                "MEDIUM",
+                                "LOW"
+                            ],
+                            "type": "string",
+                            "title": "",
+                            "enumNames": [
+                                "High",
+                                "Medium",
+                                "Low"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Test - Skill to Agents.",
+                "bannerDescription": "Test Agents are restricted to Test Environment. Map Test Agents to right Skills. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "skillId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "skillName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "hidden": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "mapperTitle": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "ConfigMapper": {
+            "ui:field": "entitymapper",
+            "ui:options": {
+                "baseListDataPath": "users",
+                "baseKeysDataPath": "key",
+                "readOnly": false,
+                "unassignedListLabel": "CONFIG_MAPPER_LABEL_UNASSIGNED",
+                "assignedListLabel": "CONFIG_MAPPER_LABEL_ASSIGNED",
+                "keyListLabel": "CONFIG_MAPPER_LABEL_SKILL_LEVEL",
+                "fieldSize": [
+                    3,
+                    5
+                ]
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Test - Skill to Agents.",
+                "bannerDescription": "Test Agents are restricted to Test Environment. Map Test Agents to right Skills. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "skillId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "skillName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "hidden": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "mapperTitle": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "ConfigMapper": {
+            "ui:field": "entitymapper",
+            "ui:options": {
+                "isDisabled": true,
+                "baseListDataPath": "users",
+                "baseKeysDataPath": "key",
+                "readOnly": false,
+                "unassignedListLabel": "CONFIG_MAPPER_LABEL_UNASSIGNED",
+                "assignedListLabel": "CONFIG_MAPPER_LABEL_ASSIGNED",
+                "keyListLabel": "CONFIG_MAPPER_LABEL_SKILL_LEVEL",
+                "fieldSize": [
+                    3,
+                    5
+                ]
+            }
+        }
+    },
+    "fetch": {
+        "list": {
+            "listUser": "ConfigMapper.users"
+        },
+        "page": "STATest_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

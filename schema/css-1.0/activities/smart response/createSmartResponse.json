@@ -1,0 +1,343 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "accountId": {
+                "type": "string",
+                "title": ""
+            },
+            "uploadKey": {
+                "title": "",
+                "type": "array",
+                "default": [
+                    "uploadFile"
+                ]
+            },
+            "stepOne": {
+                "type": "object",
+                "title": "SMART_RESPONSES_STEP_ONE_TITLE",
+                "properties": {
+                    "textOne": {
+                        "type": "string",
+                        "title": "SMART_RESPONSES_STEP_ONE_DESCRIPTION",
+                        "default": ""
+                    },
+                    "template": {
+                        "title": "",
+                        "type": "string",
+                        "default": ""
+                    }
+                }
+            },
+            "stepTwo": {
+                "type": "object",
+                "title": "SMART_RESPONSES_STEP_TWO_TITLE",
+                "properties": {
+                    "textTwo": {
+                        "type": "string",
+                        "title": "SMART_RESPONSES_STEP_TWO_DESCRIPTION"
+                    }
+                }
+            },
+            "stepThree": {
+                "type": "object",
+                "title": "SMART_RESPONSES_STEP_THREE_TITLE",
+                "properties": {
+                    "textThree": {
+                        "type": "string",
+                        "title": "SMART_RESPONSES_STEP_THREE_DESCRIPTION",
+                        "default": ""
+                    }
+                }
+            },
+            "uploadFile": {
+                "title": "",
+                "type": "string",
+                "default": ""
+            }
+        }
+    },
+    "uiSchema": {
+        "accountId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "uploadKey": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "stepOne": {
+            "textOne": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 6,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "template": {
+                "ui:field": "button",
+                "ui:options": {
+                    "fieldSize": [
+                        0,
+                        12
+                    ],
+                    "size": 6,
+                    "type": "secondary",
+                    "downloadFile": {
+                        "name": "Smart-Responses",
+                        "type": "application/vnd.ms-excel:UTF-8; charset=UTF-8"
+                    },
+                    "textStyles": {
+                        "fontSize": 13,
+                        "fontWeight": "bold"
+                    },
+                    "displayName": "Download"
+                }
+            }
+        },
+        "stepTwo": {
+            "textTwo": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        7,
+                        7
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "stepThree": {
+            "ui:options": {
+                "disableSeparator": true
+            },
+            "textThree": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        7,
+                        7
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "uploadFile": {
+            "ui:field": "text",
+            "ui:options": {
+                "fileReadType": "binaryString",
+                "mediaType": "excel",
+                "inputType": "file",
+                "displayValueType": "fileName",
+                "inputFileButtonText": "BROWSE",
+                "showDownloadButton": false,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "accountId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "uploadKey": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "stepOne": {
+            "textOne": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 6,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "template": {
+                "ui:field": "button",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        0,
+                        12
+                    ],
+                    "size": 6,
+                    "type": "secondary",
+                    "downloadFile": {
+                        "name": "Smart-Responses",
+                        "type": "application/vnd.ms-excel:UTF-8; charset=UTF-8"
+                    },
+                    "textStyles": {
+                        "fontSize": 13,
+                        "fontWeight": "bold"
+                    },
+                    "displayName": "Download"
+                }
+            }
+        },
+        "stepTwo": {
+            "textTwo": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        7,
+                        7
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "stepThree": {
+            "ui:options": {
+                "disableSeparator": true
+            },
+            "textThree": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        7,
+                        7
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "uploadFile": {
+            "ui:field": "text",
+            "ui:options": {
+                "fileReadType": "binaryString",
+                "mediaType": "excel",
+                "inputType": "file",
+                "displayValueType": "fileName",
+                "inputFileButtonText": "BROWSE",
+                "showDownloadButton": false,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "createSmartResponse_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

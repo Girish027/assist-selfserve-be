@@ -1,0 +1,1755 @@
+{
+	"schema": {
+		"type": "object",
+		"properties": {
+			"mailConfigAccordionTabs": {
+				"type": "array",
+				"title": "",
+				"items": [{
+					"type": "object",
+					"properties": {
+						"configKey": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_CONFIG_KEY",
+							"pattern": "^[0-9a-zA-Z._ -]+$"
+						},
+						"fromEmailId": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_FROM_EMAIL_ID",
+							"pattern": "^[0-9a-zA-Z._ -@]+$"
+						},
+						"fromName": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_FROM_NAME",
+							"pattern": "^[0-9a-zA-Z._ -]+$"
+						},
+						"fromPassword": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_FROM_PASSWORD",
+							"pattern": "^[0-9a-zA-Z._ -@#$%^&*()-]+$"
+						},
+						"smtpPort": {
+							"type": "number",
+							"title": "SELF_SERVE_MAILER_SMTP_PORT",
+							"pattern": "^[0-9a-zA-Z._ -]+$"
+						},
+						"smtpHost": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_SMTP_HOST",
+							"pattern": "^[0-9a-zA-Z._ -]+$"
+						},
+						"isSsl": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_IS_SSL",
+							"enum": [
+								"true",
+								"false"
+							],
+							"enumNames": [
+								"True",
+								"False"
+							],
+							"default": "false"
+						},
+						"debugEnable": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_DEBUG_ENABLE",
+							"enum": [
+								"true",
+								"false"
+							],
+							"enumNames": [
+								"True",
+								"False"
+							],
+							"default": "false"
+						},
+						"mailSubject": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_MAIL_SUBJECT",
+							"default": ""
+						},
+						"bccEmail": {
+							"type": "string",
+							"title": "SELF_SERVE_MAILER_BCC_EMAIL",
+							"default": ""
+						}
+					},
+					"required": [
+						"configKey",
+						"fromEmailId",
+						"fromName",
+						"fromPassword",
+						"smtpPort",
+						"smtpHost",
+						"isSsl"
+					]
+				}]
+			},
+			"displayMsg": {
+				"type": "string",
+				"title": "SELF_SERVE_MAILER_DISPLAY_MSG",
+				"default": "SELF_SERVE_MAILER_DISPLAY_MSG_DEFAULT"
+			},
+			"tabsField": {
+				"type": "array",
+				"items": [{
+						"type": "object",
+						"properties": {
+							"baseConfigurationAccordionTabs": {
+								"type": "array",
+								"title": "",
+								"items": [{
+										"type": "object",
+										"properties": {
+											"themeSelector": {
+												"type": "object",
+												"properties": {
+													"theme": {
+														"type": "string"
+													},
+													"bgColor ": {
+														"type": "string"
+													},
+													"linkColor": {
+														"type": "string"
+													},
+													"buttonColor": {
+														"type": "string"
+													}
+												}
+											}
+										}
+									},
+									{
+										"type": "object",
+										"properties": {
+											"extendedSubject": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_EXTENDED_SUBJECT",
+												"default": ""
+											},
+											"companyLogo": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_COMPANY_LOGO_URL",
+												"pattern": "(\b(https?|ftp|file)://)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]"
+											},
+											"logoPosition": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_LOGO_POSITION",
+												"enum": [
+													"left",
+													"right",
+													"center"
+												],
+												"enumNames": [
+													"Left",
+													"Right",
+													"Center"
+												],
+												"default": "left"
+											},
+											"logoBackground": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_LOGO_BACKGROUND",
+												"default": ""
+											},
+											"greetings": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_GREETINGS",
+												"default": ""
+											},
+											"showCustomerName": {
+												"type": "boolean",
+												"title": "SELF_SERVE_MAILER_SHOW_CUSTOMER_NAME",
+												"default": false,
+												"enum": [
+													false,
+													true
+												]
+											},
+											"message": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_MESSAGE",
+												"default": ""
+											}
+										}
+									},
+									{
+										"type": "object",
+										"properties": {
+											"showClick": {
+												"type": "boolean",
+												"title": "SELF_SERVE_MAILER_SHOW_CLICK_TO_CHAT_BUTTON",
+												"default": false,
+												"enum": [
+													false,
+													true
+												]
+											},
+											"clickToChatMsg": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_CLICK_TO_CHAT_MESSAGE",
+												"default": ""
+											},
+											"buttonLabel": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_BUTTON_LABEL",
+												"default": ""
+											},
+											"buttonUrl": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_BUTTON_URL",
+												"pattern": "(\b(https?|ftp|file)://)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]"
+											}
+										}
+									},
+									{
+										"type": "object",
+										"properties": {
+											"showSignOff": {
+												"type": "boolean",
+												"title": "SELF_SERVE_MAILER_SHOW_SIGN_OFF",
+												"default": false,
+												"enum": [
+													false,
+													true
+												]
+											},
+											"signOffMsg": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_SIGN_OFF_MESSAGE",
+												"default": ""
+											},
+											"showSignature": {
+												"type": "boolean",
+												"title": "SELF_SERVE_MAILER_SHOW_SIGNATURE",
+												"default": false,
+												"enum": [
+													false,
+													true
+												]
+											},
+											"signatureText": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_SIGNATURE_TEXT",
+												"default": ""
+											},
+											"footerMessage": {
+												"type": "string",
+												"title": "SELF_SERVE_MAILER_FOOTER",
+												"default": ""
+											},
+											"footer": {
+												"type": "array",
+												"default": [{
+													"showFooterLink": false,
+													"label": "",
+													"linkUrl": ""
+												}]
+											}
+										}
+									}
+								]
+							}
+						}
+					},
+					{
+						"type": "object",
+						"properties": {
+							"mailerPreview": {
+								"type": "object"
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"uiSchema": {
+		"ui:options": {
+			"disableSeparator": true
+		},
+		"mailConfigAccordionTabs": {
+			"ui:options": {
+				"type": "accordion",
+				"isDisabled": false,
+				"disableSeparator": true,
+				"size": 12,
+				"hideTitle": true,
+				"allowMultipleExpanded": true,
+				"allowZeroExpanded": true,
+				"preExpanded": [],
+				"tabNames": [
+					"Mail Configurations"
+				]
+			},
+			"items": [{
+				"ui:order": [
+					"configKey",
+					"fromEmailId",
+					"fromName",
+					"fromPassword",
+					"smtpPort",
+					"smtpHost",
+					"isSsl",
+					"debugEnable",
+					"mailSubject",
+					"bccEmail"
+				],
+				"ui:options": {
+					"disableSeparator": true
+				},
+				"configKey": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid configKey",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromEmailId": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid EmailId",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromName": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid Sender Name",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromPassword": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid password",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"smtpPort": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid smtpPort",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"smtpHost": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid smtpHost",
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"isSsl": {
+					"ui:field": "select",
+					"ui:options": {
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"debugEnable": {
+					"ui:field": "select",
+					"ui:options": {
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"mailSubject": {
+					"ui:field": "text",
+					"ui:options": {
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"bccEmail": {
+					"ui:field": "text",
+					"ui:options": {
+						"fieldSize": [
+							12,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				}
+			}]
+		},
+		"displayMsg": {
+			"ui:field": "plaintext",
+			"ui:options": {
+				"disableSeparator": true,
+				"fieldSize": [
+					12,
+					12
+				],
+				"styles": {
+					"container": {
+						"marginBottom": "35px",
+						"marginRight": "10px"
+					},
+					"label": {
+						"marginBottom": "8px"
+					},
+					"field": {}
+				}
+			}
+		},
+		"tabsField": {
+			"ui:options": {
+				"type": "tabs",
+				"size": 12,
+				"disableSeparator": true,
+				"hideTitle": true,
+				"tabContainer": {
+					"height": "50px",
+					"width": "70%"
+				},
+				"tabNames": [
+					"Base Configuration",
+					"Preview"
+				]
+			},
+			"items": [{
+					"baseConfigurationAccordionTabs": {
+						"ui:options": {
+							"type": "accordion",
+							"isDisabled": false,
+							"size": 12.2,
+							"hideTitle": true,
+							"allowMultipleExpanded": false,
+							"allowZeroExpanded": true,
+							"preExpanded": [],
+							"tabNames": [
+								"1. Choose your theme",
+								"2. Set the header content",
+								"3. Set 'Click to Chat' message",
+								"4. Set the footer content"
+							]
+						},
+						"items": [{
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"themeSelector": {
+									"ui:field": "selector",
+									"ui:options": {
+										"colorArray": [{
+												"isCustomTheme": false,
+												"colorTitle": "A Neutral theme with subtle warm contrast",
+												"theme": "Neutral",
+												"radioButtonValue": "Neutral",
+												"color": "black",
+												"bgColor": "#FFFFFF",
+												"linkColor": "#555555",
+												"buttonColor": "#000000"
+											},
+											{
+												"isCustomTheme": false,
+												"colorTitle": "A Red theme with a subtle warm contrast",
+												"theme": "Red",
+												"color": "red",
+												"radioButtonValue": "Red",
+												"bgColor": "#F3F3F3",
+												"linkColor": "#E00B04",
+												"buttonColor": "#E32415"
+											},
+											{
+												"isCustomTheme": false,
+												"colorTitle": "A hint of blue and icy colors",
+												"theme": "Blue",
+												"color": "blue",
+												"radioButtonValue": "Blue",
+												"bgColor": "#F3F3F3",
+												"linkColor": "#10A3E4",
+												"buttonColor": "#2C70AB"
+											},
+											{
+												"isCustomTheme": true,
+												"colorTitle": "Your own theme! Enter HUX value for the colors",
+												"theme": "Custom",
+												"radioButtonValue": "Custom",
+												"bgColor": "",
+												"linkColor": "",
+												"buttonColor": ""
+											}
+										],
+										"isDisabled": false
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"extendedSubject",
+									"companyLogo",
+									"logoPosition",
+									"logoBackground",
+									"greetings",
+									"showCustomerName",
+									"message"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"extendedSubject": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"companyLogo": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"logoPosition": {
+									"ui:field": "select",
+									"ui:options": {
+										"fieldSize": [
+											10,
+											12
+										],
+										"size": 4,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"logoBackground": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											10,
+											12
+										],
+										"size": 4,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"greetings": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"showCustomerName": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"message": {
+									"ui:field": "textarea",
+									"ui:options": {
+										"fieldSize": [
+											8,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"showClick",
+									"clickToChatMsg",
+									"buttonLabel",
+									"buttonUrl"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"showClick": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"clickToChatMsg": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"buttonLabel": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"buttonUrl": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"showSignOff",
+									"signOffMsg",
+									"showSignature",
+									"signatureText",
+									"footerMessage",
+									"footer"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"showSignOff": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"signOffMsg": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"showSignature": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"signatureText": {
+									"ui:field": "text",
+									"ui:options": {
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"footerMessage": {
+									"ui:field": "textarea",
+									"ui:options": {
+										"fieldSize": [
+											8,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"footer": {
+									"ui:field": "footer",
+									"ui:options": {
+										"orderable": false,
+										"removable": false,
+										"disableSeparator": true,
+										"hideTitle": true,
+										"isDisabled": false
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"mailerPreview": {
+						"ui:field": "mailerPreview",
+						"ui:options": {
+							"disableSeparator": true,
+							"themePath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								0,
+								"themeSelector"
+							],
+							"customThemePath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								0,
+								"themeSelector"
+							],
+							"headerPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								1
+							],
+							"clickToChatPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								2
+							],
+							"footerPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								3
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"viewUiSchema": {
+		"ui:options": {
+			"disableSeparator": true
+		},
+		"mailConfigAccordionTabs": {
+			"ui:options": {
+				"type": "accordion",
+				"isDisabled": true,
+				"size": 12,
+				"hideTitle": true,
+				"allowMultipleExpanded": true,
+				"allowZeroExpanded": true,
+				"preExpanded": [],
+				"tabNames": [
+					"Mail Configurations"
+				]
+			},
+			"items": [{
+				"ui:order": [
+					"configKey",
+					"fromEmailId",
+					"fromName",
+					"fromPassword",
+					"smtpPort",
+					"smtpHost",
+					"isSsl",
+					"debugEnable",
+					"mailSubject",
+					"bccEmail"
+				],
+				"ui:options": {
+					"disableSeparator": true
+				},
+				"configKey": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid configKey",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromEmailId": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid Email Id",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromName": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid Sender Name",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"fromPassword": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid password",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"smtpPort": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid smtp port",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"smtpHost": {
+					"ui:field": "text",
+					"ui:options": {
+						"validationError": "Please provide a valid smtp host",
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"isSsl": {
+					"ui:field": "select",
+					"ui:options": {
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"debugEnable": {
+					"ui:field": "select",
+					"ui:options": {
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"mailSubject": {
+					"ui:field": "text",
+					"ui:options": {
+						"isDisabled": true,
+						"fieldSize": [
+							10,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				},
+				"bccEmail": {
+					"ui:field": "text",
+					"ui:options": {
+						"isDisabled": true,
+						"fieldSize": [
+							12,
+							12
+						],
+						"size": 5,
+						"styles": {
+							"container": {
+								"marginBottom": "15px",
+								"marginRight": "10px"
+							},
+							"label": {
+								"marginBottom": "8px"
+							},
+							"field": {}
+						}
+					}
+				}
+			}]
+		},
+		"displayMsg": {
+			"ui:field": "plaintext",
+			"ui:options": {
+				"isDisabled": true,
+				"disableSeparator": true,
+				"fieldSize": [
+					12,
+					12
+				],
+				"styles": {
+					"container": {
+						"marginBottom": "35px",
+						"marginRight": "10px"
+					},
+					"label": {
+						"marginBottom": "8px"
+					},
+					"field": {}
+				}
+			}
+		},
+		"tabsField": {
+			"ui:options": {
+				"type": "tabs",
+				"size": 12,
+				"hideTitle": true,
+				"disableSeparator": true,
+				"tabContainer": {
+					"height": "50px",
+					"width": "70%",
+					"marginLeft": -20
+				},
+				"tabNames": [
+					"Base Configuration",
+					"Preview"
+				]
+			},
+			"items": [{
+					"ui:options": {
+						"disableSeparator": true
+					},
+					"baseConfigurationAccordionTabs": {
+						"ui:options": {
+							"type": "accordion",
+							"isDisabled": false,
+							"size": 12.2,
+							"hideTitle": true,
+							"allowMultipleExpanded": false,
+							"allowZeroExpanded": true,
+							"preExpanded": [],
+							"tabNames": [
+								"1. Choose your theme",
+								"2. Set the header content",
+								"3. Set 'Click to Chat' message",
+								"4. Set the footer content"
+							]
+						},
+						"items": [{
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"themeSelector": {
+									"ui:field": "selector",
+									"ui:options": {
+										"colorArray": [{
+												"isCustomTheme": false,
+												"colorTitle": "A Neutral theme with subtle warm contrast",
+												"theme": "Neutral",
+												"radioButtonValue": "Neutral",
+												"color": "black",
+												"bgColor": "#FFFFFF",
+												"linkColor": "#555555",
+												"buttonColor": "#000000"
+											},
+											{
+												"isCustomTheme": false,
+												"colorTitle": "A Red theme with a subtle warm contrast",
+												"theme": "Red",
+												"color": "red",
+												"radioButtonValue": "Red",
+												"bgColor": "#F3F3F3",
+												"linkColor": "#E00B04",
+												"buttonColor": "#E32415"
+											},
+											{
+												"isCustomTheme": false,
+												"colorTitle": "A hint of blue and icy colors",
+												"theme": "Blue",
+												"color": "blue",
+												"radioButtonValue": "Blue",
+												"bgColor": "#F3F3F3",
+												"linkColor": "#10A3E4",
+												"buttonColor": "#2C70AB"
+											},
+											{
+												"isCustomTheme": true,
+												"colorTitle": "Your own theme! Enter HUX value for the colors",
+												"theme": "Custom",
+												"radioButtonValue": "Custom",
+												"bgColor": "",
+												"linkColor": "",
+												"buttonColor": ""
+											}
+										],
+										"isDisabled": true
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"extendedSubject",
+									"companyLogo",
+									"logoPosition",
+									"logoBackground",
+									"greetings",
+									"showCustomerName",
+									"message"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"extendedSubject": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"companyLogo": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"logoPosition": {
+									"ui:field": "select",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											10,
+											12
+										],
+										"size": 4,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"logoBackground": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											10,
+											12
+										],
+										"size": 4,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"greetings": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"showCustomerName": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"isDisabled": true,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"message": {
+									"ui:field": "textarea",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											8,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"showClick",
+									"clickToChatMsg",
+									"buttonLabel",
+									"buttonUrl"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"showClick": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"isDisabled": true,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"clickToChatMsg": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"buttonLabel": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"buttonUrl": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								}
+							},
+							{
+								"ui:order": [
+									"showSignOff",
+									"signOffMsg",
+									"showSignature",
+									"signatureText",
+									"footerMessage",
+									"footer"
+								],
+								"ui:options": {
+									"disableSeparator": true
+								},
+								"showSignOff": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"isDisabled": true,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"signOffMsg": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"showSignature": {
+									"ui:field": "checkbox",
+									"ui:options": {
+										"isDisabled": true,
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"signatureText": {
+									"ui:field": "text",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											6,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginBottom": "15px",
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"footerMessage": {
+									"ui:field": "textarea",
+									"ui:options": {
+										"isDisabled": true,
+										"fieldSize": [
+											8,
+											8
+										],
+										"styles": {
+											"container": {
+												"marginRight": "10px"
+											},
+											"label": {
+												"marginBottom": "8px"
+											},
+											"field": {}
+										}
+									}
+								},
+								"footer": {
+									"ui:field": "footer",
+									"ui:options": {
+										"orderable": false,
+										"removable": false,
+										"disableSeparator": true,
+										"hideTitle": true,
+										"isDisabled": true
+									}
+								}
+							}
+						]
+					}
+				},
+				{
+					"mailerPreview": {
+						"ui:field": "mailerPreview",
+						"ui:options": {
+							"disableSeparator": true,
+							"themePath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								0,
+								"themeSelector"
+							],
+							"headerPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								1
+							],
+							"clickToChatPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								2
+							],
+							"footerPath": [
+								"tabsField",
+								0,
+								"baseConfigurationAccordionTabs",
+								3
+							]
+						}
+					}
+				}
+			]
+		}
+	},
+	"fetch": {
+		"page": "updateMailer_p0"
+	},
+	"validation": {
+		"enabled": true,
+		"type": "onchange"
+	}
+}

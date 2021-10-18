@@ -1,0 +1,473 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "banner": {
+        "type": "string"
+      },
+      "accountId": {
+        "type": "string",
+        "title": ""
+      },
+      "uploadKey": {
+        "title": "",
+        "type": "array",
+        "default": [
+          "uploadfile"
+        ]
+      },
+      "stepOne": {
+        "type": "object",
+        "title": "BULK_AGENTS_STEP_ONE_TITLE",
+        "properties": {
+          "textOne": {
+            "type": "string",
+            "title": "BULK_AGENTS_STEP_ONE_DESCRIPTION",
+            "default": ""
+          },
+          "template": {
+            "title": "",
+            "type": "string",
+            "default": ""
+          }
+        }
+      },
+      "stepTwo": {
+        "type": "object",
+        "title": "BULK_AGENTS_STEP_TWO_TITLE",
+        "properties": {
+          "textTwo": {
+            "type": "string",
+            "title": "BULK_AGENTS_STEP_TWO_DESCRIPTION"
+          }
+        }
+      },
+      "stepThree": {
+        "type": "object",
+        "title": "BULK_AGENTS_STEP_THREE_TITLE",
+        "properties": {
+          "textThree": {
+            "type": "string",
+            "title": "BULK_AGENTS_STEP_THREE_DESCRIPTION"
+          },
+          "selectType": {
+            "type": "string",
+            "enum": [
+              "add",
+              "update"
+            ],
+            "enumNames": [
+              "Create Users",
+              "Update Users"
+            ]
+          }
+        }
+      },
+      "stepFour": {
+        "type": "object",
+        "title": "BULK_AGENTS_STEP_FOUR_TITLE",
+        "properties": {
+          "textFour": {
+            "type": "string",
+            "title": "BULK_AGENTS_STEP_FOUR_DESCRIPTION",
+            "default": ""
+          }
+        }
+      },
+      "uploadfile": {
+        "title": "",
+        "type": "string",
+        "default": ""
+      }
+    }
+  },
+  "uiSchema": {
+    "banner": {
+      "ui:field": "infobanner",
+      "ui:options": {
+        "size": 10,
+        "bannerTitle": "BULK_AGENTS_INFOBANNER_TITLE",
+        "bannerDescription": "BULK_AGENTS_INFOTEXT",
+        "styles": {
+          "container": { "marginTop": "50px" }
+        }
+      }
+    },
+    "accountId": {
+      "ui:field": "plaintext",
+      "ui:options": {
+        "styles": {
+          "container": {
+            "display": "none"
+          },
+          "label": {},
+          "field": {}
+        }
+      }
+    },
+    "uploadKey": {
+      "ui:field": "plaintext",
+      "ui:options": {
+        "styles": {
+          "container": {
+            "display": "none"
+          },
+          "label": {},
+          "field": {}
+        }
+      }
+    },
+    "stepOne": {
+      "textOne": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            12,
+            12
+          ],
+          "size": 6,
+          "styles": {
+            "container": {
+              "marginRight": "20px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      },
+      "template": {
+        "ui:field": "wrapper",
+        "ui:options": {
+          "fieldSize": [
+            0,
+            12
+          ],
+          "size": 6,
+          "type": "secondary",
+          "component": "button",
+          "isAccessTokenRequired": true,
+          "event": "onClick",
+          "downloadFile": {
+            "name": "BulkUserCreationTemplate-generated.xls",
+            "fileType": "application/vnd.ms-excel",
+            "readType": "arrayBuffer"
+          },
+          "template": [
+            {
+              "name": "reqUrl",
+              "value": "{serviceBaseUrl}/client/{clientId}/account/{accountId}/env/TEST/entity/bulkagents/type/PAGE_DATA_VALUE/download/getBulkAgentsExcel"
+            },
+            {
+              "name": "fileName",
+              "value": "{clientId}-{accountId}-BulkUserCreationTemplate-generated.xls"
+            }
+          ],
+          "textStyles": {
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "display": "inline-flex",
+            "lineHeight": "25px",
+            "verticalAlign": "top"
+          },
+          "displayName": "Download"
+        }
+      }
+    },
+    "stepTwo": {
+      "textTwo": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            7,
+            7
+          ],
+          "styles": {
+            "container": {},
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    },
+    "stepThree": {
+      "textThree": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            12,
+            12
+          ],
+          "size": 6,
+          "styles": {
+            "container": {
+              "marginRight": "20px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      },
+      "selectType": {
+        "ui:field": "radio",
+        "ui:options": {
+          "displayType": "horizontal",
+          "fieldSize": [
+            10,
+            8
+          ],
+          "size": 8,
+          "styles": {
+            "container": {
+              "width": "100%"
+            },
+            "label": {},
+            "field": {}
+          }
+        }
+      }
+    },
+    "stepFour": {
+      "ui:options": {
+        "disableSeparator": true
+      },
+      "textFour": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            7,
+            7
+          ],
+          "styles": {
+            "container": {},
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    },
+    "uploadfile": {
+      "ui:field": "text",
+      "ui:options": {
+        "fileReadType": "dataurl",
+        "mediaType": "excel",
+        "inputType": "file",
+        "displayValueType": "fileName",
+        "inputFileButtonText": "BROWSE",
+        "showDownloadButton": false,
+        "fieldSize": [
+          12,
+          12
+        ],
+        "size": 10
+      }
+    }
+  },
+  "viewUiSchema": {
+    "banner": {
+      "ui:field": "infobanner",
+      "ui:options": {
+        "size": 10,
+        "bannerTitle": "BULK_AGENTS_INFOBANNER_TITLE",
+        "bannerDescription": "BULK_AGENTS_INFOTEXT",
+        "styles": {
+          "container": { "marginTop": "50px" }
+        }
+      }
+    },
+    "accountId": {
+      "ui:field": "plaintext",
+      "ui:options": {
+        "isDisabled": true,
+        "styles": {
+          "container": {
+            "display": "none"
+          },
+          "label": {},
+          "field": {}
+        }
+      }
+    },
+    "uploadKey": {
+      "ui:field": "plaintext",
+      "ui:options": {
+        "styles": {
+          "container": {
+            "display": "none"
+          },
+          "label": {},
+          "field": {}
+        }
+      }
+    },
+    "stepOne": {
+      "textOne": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "isDisabled": true,
+          "fieldSize": [
+            12,
+            12
+          ],
+          "size": 6,
+          "styles": {
+            "container": {
+              "marginRight": "20px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      },
+      "template": {
+        "ui:field": "wrapper",
+        "ui:options": {
+          "isDisabled": true,
+          "fieldSize": [
+            0,
+            12
+          ],
+          "size": 6,
+          "type": "secondary",
+          "component": "button",
+          "isAccessTokenRequired": true,
+          "event": "onClick",
+          "downloadFile": {
+            "name": "BulkUserCreationTemplate-generated.xls",
+            "fileType": "application/vnd.ms-excel",
+            "readType": "arrayBuffer"
+          },
+          "template": [
+            {
+              "name": "reqUrl",
+              "value": "{serviceBaseUrl}/client/{clientId}/account/{accountId}/env/TEST/entity/bulkAgents/type/PAGE_DATA_VALUE/download/getBulkAgentsExcel"
+            },
+            {
+              "name": "fileName",
+              "value": "{clientId}-{accountId}-BulkUserCreationTemplate-generated.xls"
+            }
+          ],
+          "textStyles": {
+            "fontSize": 13,
+            "fontWeight": "bold",
+            "display": "inline-flex",
+            "lineHeight": "25px",
+            "verticalAlign": "top"
+          },
+          "displayName": "Download"
+        }
+      }
+    },
+    "stepTwo": {
+      "textTwo": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            7,
+            7
+          ],
+          "styles": {
+            "container": {},
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    },
+    "stepThree": {
+      "textThree": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "fieldSize": [
+            12,
+            12
+          ],
+          "size": 6,
+          "styles": {
+            "container": {
+              "marginRight": "20px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      },
+      "selectType": {
+        "ui:field": "radio",
+        "ui:options": {
+          "displayType": "horizontal",
+          "fieldSize": [
+            10,
+            8
+          ],
+          "size": 8,
+          "styles": {
+            "container": {
+              "width": "100%"
+            },
+            "label": {},
+            "field": {}
+          }
+        }
+      }
+    },
+    "stepFour": {
+      "ui:options": {
+        "disableSeparator": true
+      },
+      "textFour": {
+        "ui:field": "plaintext",
+        "ui:options": {
+          "isDisabled": true,
+          "fieldSize": [
+            7,
+            7
+          ],
+          "styles": {
+            "container": {},
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    },
+    "uploadfile": {
+      "ui:field": "text",
+      "ui:options": {
+        "fileReadType": "dataurl",
+        "mediaType": "excel",
+        "inputType": "file",
+        "displayValueType": "fileName",
+        "inputFileButtonText": "BROWSE",
+        "showDownloadButton": false,
+        "fieldSize": [
+          12,
+          12
+        ],
+        "size": 10
+      }
+    }
+  },
+  "fetch": {
+    "page": "createBulkAgentsTest_p0"
+  },
+  "validation": {
+    "enabled": true,
+    "type": "onchange"
+  }
+}

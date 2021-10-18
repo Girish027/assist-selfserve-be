@@ -1,0 +1,8 @@
+########
+Release Notes:
+QR: https://247inc.atlassian.net/browse/QR-559
+UAC Console Porting 
+Release : EC.1.1 Train
+
+
+###########

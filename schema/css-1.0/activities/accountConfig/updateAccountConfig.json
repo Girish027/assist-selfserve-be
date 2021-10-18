@@ -1,0 +1,183 @@
+{
+    "schema": {
+        "type": "object",
+        "required": ["configValue"],
+        "properties": {
+            "key": {
+                "type": "string",
+                "title": "key"
+            },
+            "configName": {
+                "type": "string",
+                "title": "Config Name"
+            },
+            "configContext": {
+                "type": "string",
+                "title": "Config Context"
+            },
+            "description": {
+                "type": "string",
+                "title": "Description"
+            },
+            "configValue": {
+                "type": "string",
+                "pattern": "^[0-9a-zA-Z._ -]+[0-9a-zA-Z._-]+$",
+                "title": "Config Value"
+            }
+        }
+    },
+    "uiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "configName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "configContext": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "description": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "configValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "tooltipTrigger": "hover",
+                "validationError": "cannot be empty",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "configName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "configContext": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true
+            }
+        },
+        "description": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "configValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "list": {},
+        "page": "updateAccountConfig_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

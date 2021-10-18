@@ -1,0 +1,584 @@
+{
+    "schema": {
+        "definitions": {
+            "queueScope": {
+                "title": "Scope Id",
+                "type": "string",
+                "enum": [],
+                "enumNames": []
+            }
+        },
+        "required": [
+            "piiMaskName",
+            "matchPattern",
+            "replacePattern"
+        ],
+        "type": "object",
+        "properties": {
+            "key": {
+                "title": "Key",
+                "type": "string"
+            },
+            "piiMaskBaseId": {
+                "title": "piiMaskBaseId",
+                "type": "string",
+                "default": ""
+            },
+            "accountId": {
+                "type": "string",
+                "title": "Account"
+            },
+            "scopeType": {
+                "type": "string",
+                "title": "Scope",
+                "enum": [
+                    "account",
+                    "queue"
+                ],
+                "enumNames": [
+                    "Account",
+                    "Queue"
+                ],
+                "default": "account"
+            },
+            "piiMaskName": {
+                "type": "string",
+                "title": "PII Mask Name"
+            },
+            "matchPattern": {
+                "type": "string",
+                "title": "Match Pattern"
+            },
+            "replacePattern": {
+                "type": "string",
+                "title": "Replace Pattern"
+            },
+            "enabled": {
+                "type": "string",
+                "title": "Is Enabled",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "True",
+                    "False"
+                ],
+                "default": "true"
+            }
+        },
+        "dependencies": {
+            "scopeType": {
+                "oneOf": [
+                    {
+                        "properties": {
+                            "scopeType": {
+                                "enum": [
+                                    "account"
+                                ]
+                            },
+                            "accountScope": {
+                                "title": "Scope Id",
+                                "type": "string",
+                                "default": ""
+                            }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "scopeType": {
+                                "enum": [
+                                    "queue"
+                                ]
+                            },
+                            "queueScope": {
+                                "title": "Scope Id",
+                                "$ref": "#/definitions/queueScope"
+                            }
+                        },
+                        "required": [
+                            "queueScope"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "uiSchema": {
+        "ui:order": [
+            "key",
+            "accountId",
+            "piiMaskBaseId",
+            "scopeType",
+            "accountScope",
+            "queueScope",
+            "piiMaskName",
+            "matchPattern",
+            "replacePattern",
+            "enabled"
+        ],
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "piiMaskBaseId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "accountId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scopeType": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "accountScope": {
+            "ui:field": "boundField",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "component": "text",
+                "boundFieldValuePath": "accountId",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "queueScope": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "piiMaskName": {
+            "ui:field": "text",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    5
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "44px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "matchPattern": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "placeholder": "([0-9]{2})(s|-|.)([0-9]{4})(s|-|.)([0-9]{2})([0-9]{2})",
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "replacePattern": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "placeholder": "XXXX-XXXX-$6",
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "ui:order": [
+            "key",
+            "piiMaskBaseId",
+            "accountId",
+            "scopeType",
+            "accountScope",
+            "queueScope",
+            "piiMaskName",
+            "matchPattern",
+            "replacePattern",
+            "enabled"
+        ],
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "piiMaskBaseId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "accountId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scopeType": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "accountScope": {
+            "ui:field": "boundField",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "component": "text",
+                "boundFieldValuePath": "accountId",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "queueScope": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "isDisabled": true,
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scopeId": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "piiMaskName": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    5
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "44px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "matchPattern": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "placeholder": "([0-9]{2})(s|-|.)([0-9]{4})(s|-|.)([0-9]{2})([0-9]{2})",
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "replacePattern": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "placeholder": "XXXX-XXXX-$6",
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "list": {
+            "listQueue": "definitions.queueScope"
+        },
+        "page": "updateMaskingPatterns_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

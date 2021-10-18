@@ -1,0 +1,135 @@
+{
+    "schema": {
+        "type": "object",
+        "required": [
+            "skillName",
+            "skillDesc"
+        ],
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "skillName": {
+                "type": "string",
+                "title": "Skill Name",
+                "pattern": "^[0-9a-zA-Z._ -]+[0-9a-zA-Z._-]+$",
+                "maxLength": 50
+            },
+            "skillDesc": {
+                "type": "string",
+                "title": "Skill Description",
+                "pattern": "^[0-9a-zA-Z._ -]+$"
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Skills are associated with users. There are primarily three levels of proficiency - high, medium and low.",
+                "bannerDescription": "Map Agents to Skills that will bind them to Queues where customer requests arrive. After this level is set for each agent, the agent with the highest proficiency is given a chat on priority.\n Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "skillName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Unique Skill Name. Cannot be longer than 50 characters and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "skillDesc": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Describe the purpose of this Skill and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Skills are associated with users. There are primarily three levels of proficiency - high, medium and low.",
+                "bannerDescription": "Map Agents to Skills that will bind them to Queues where customer requests arrive. After this level is set for each agent, the agent with the highest proficiency is given a chat on priority.\n Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "skillName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "skillDesc": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "list": {},
+        "page": "createSkills_p0"
+    },
+    "validation": {
+        "enabled" :true,
+        "type" : "onchange"
+    }
+}

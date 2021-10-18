@@ -1,0 +1,634 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "accountId": {
+                "title": "",
+                "type": "string"
+            },
+            "key": {
+                "type": "string",
+                "default": ""
+            },
+            "applicationValue": {
+                "type": "string"
+            },
+            "currTime": {
+                "title": "Current GMT time - ",
+                "type": "string"
+            },
+            "propType": {
+                "title": "Property Type",
+                "type": "string",
+                "default": "Reset Time"
+            },
+            "time": {
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "hours": {
+                        "type": "string",
+                        "title": "Hours",
+                        "enum": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10",
+                            "11",
+                            "12"
+                        ],
+                        "enumNames": [
+                            "01",
+                            "02",
+                            "03",
+                            "04",
+                            "05",
+                            "06",
+                            "07",
+                            "08",
+                            "09",
+                            "10",
+                            "11",
+                            "12"
+                        ],
+                        "default": "1"
+                    },
+                    "minutes": {
+                        "type": "string",
+                        "title": "Minutes",
+                        "enum": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                            "16",
+                            "17",
+                            "18",
+                            "19",
+                            "20",
+                            "21",
+                            "22",
+                            "23",
+                            "24",
+                            "25",
+                            "26",
+                            "27",
+                            "28",
+                            "29",
+                            "30",
+                            "31",
+                            "32",
+                            "33",
+                            "34",
+                            "35",
+                            "36",
+                            "37",
+                            "38",
+                            "39",
+                            "40",
+                            "41",
+                            "42",
+                            "43",
+                            "44",
+                            "45",
+                            "46",
+                            "47",
+                            "48",
+                            "49",
+                            "50",
+                            "51",
+                            "52",
+                            "53",
+                            "54",
+                            "55",
+                            "56",
+                            "57",
+                            "58",
+                            "59"
+                        ],
+                        "enumNames": [
+                            "00",
+                            "01",
+                            "02",
+                            "03",
+                            "04",
+                            "05",
+                            "06",
+                            "07",
+                            "08",
+                            "09",
+                            "10",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                            "16",
+                            "17",
+                            "18",
+                            "19",
+                            "20",
+                            "21",
+                            "22",
+                            "23",
+                            "24",
+                            "25",
+                            "26",
+                            "27",
+                            "28",
+                            "29",
+                            "30",
+                            "31",
+                            "32",
+                            "33",
+                            "34",
+                            "35",
+                            "36",
+                            "37",
+                            "38",
+                            "39",
+                            "40",
+                            "41",
+                            "42",
+                            "43",
+                            "44",
+                            "45",
+                            "46",
+                            "47",
+                            "48",
+                            "49",
+                            "50",
+                            "51",
+                            "52",
+                            "53",
+                            "54",
+                            "55",
+                            "56",
+                            "57",
+                            "58",
+                            "59"
+                        ],
+                        "default": "0"
+                    },
+                    "meridian": {
+                        "enum": [
+                            "AM",
+                            "PM"
+                        ],
+                        "type": "string",
+                        "title": "Meridian",
+                        "enumNames": [
+                            "AM",
+                            "PM"
+                        ],
+                        "default": "AM"
+                    }
+                }
+            },
+            "note": {
+                "type": "string",
+                "title": "",
+                "default": "Note: All times in GMT."
+            }
+        }
+    },
+    "uiSchema": {
+        "accountId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    12,
+                    0
+                ],
+                "size": 6,
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "applicationValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "currTime": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "type": "timer",
+                "timeFormat": "hh:mm a",
+                "fieldSize": [
+                    7,
+                    2
+                ],
+                "size": 8,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "position": "absolute",
+                        "marginLeft": "200px",
+                        "width": "175px",
+                        "white-space": "nowrap"
+                    },
+                    "label": {
+                        "fontWeight": "bold",
+                        "color": "#333333",
+                        "marginRight": "20px"
+                    },
+                    "field": {
+                        "white-space": "nowrap"
+                    }
+                }
+            }
+        },
+        "propType": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 6,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "fontSize": 15,
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "time": {
+            "ui:options": {
+                "size": 10,
+                "disableSeparator": true
+            },
+            "hours": {
+                "ui:field": "select",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "minutes": {
+                "ui:field": "select",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "meridian": {
+                "ui:field": "select",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "note": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    0,
+                    5
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {
+                        "padding": "0px"
+                    },
+                    "field": {
+                        "fontWeight": "bold",
+                        "fontSize": "14px"
+                    }
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "accountId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    12,
+                    0
+                ],
+                "size": 6,
+                "styles": {
+                    "container": {
+                        "display": "none"
+                    },
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "applicationValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "currTime": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "type": "timer",
+                "timeFormat": "hh:mm a",
+                "fieldSize": [
+                    7,
+                    2
+                ],
+                "size": 8,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "position": "absolute",
+                        "marginLeft": "200px",
+                        "width": "175px",
+                        "white-space": "nowrap"
+                    },
+                    "label": {
+                        "fontWeight": "bold",
+                        "color": "#333333",
+                        "marginRight": "20px"
+                    },
+                    "field": {
+                        "white-space": "nowrap"
+                    }
+                }
+            }
+        },
+        "propType": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    12,
+                    12
+                ],
+                "size": 6,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "fontSize": 15,
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "time": {
+            "ui:options": {
+                "size": 10,
+                "disableSeparator": true
+            },
+            "hours": {
+                "ui:field": "select",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "minutes": {
+                "ui:field": "select",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "meridian": {
+                "ui:field": "select",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        12,
+                        12
+                    ],
+                    "size": 2,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            }
+        },
+        "note": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    0,
+                    5
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {
+                        "padding": "0px"
+                    },
+                    "field": {
+                        "fontWeight": "bold",
+                        "fontSize": "14px"
+                    }
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateLeadConsole_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

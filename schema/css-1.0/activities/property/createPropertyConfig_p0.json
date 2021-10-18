@@ -1,0 +1,770 @@
+{
+    "schema": {
+        "definitions": {
+            "queueScope": {
+                "title": "Scope Id",
+                "type": "string",
+                "enum": [],
+                "enumNames": [],
+                "default": ""
+            }
+        },
+        "required": [
+            "varName",
+            "displayName",
+            "order",
+            "varDescription",
+            "varType"
+        ],
+        "type": "object",
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "key": {
+                "title": "Key",
+                "type": "string",
+                "default": ""
+            },
+            "scope": {
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "scopeType": {
+                        "title": "Scope",
+                        "type": "string",
+                        "enum": [
+                            "account",
+                            "queue"
+                        ],
+                        "enumNames": [
+                            "Account",
+                            "Queue"
+                        ],
+                        "default": "account"
+                    }
+                },
+                "dependencies": {
+                    "scopeType": {
+                        "oneOf": [
+                            {
+                                "properties": {
+                                    "scopeType": {
+                                        "enum": [
+                                            "account"
+                                        ]
+                                    },
+                                    "accountId": {
+                                        "title": "Scope Id",
+                                        "type": "string",
+                                        "default": ""
+                                    }
+                                }
+                            },
+                            {
+                                "properties": {
+                                    "scopeType": {
+                                        "enum": [
+                                            "queue"
+                                        ]
+                                    },
+                                    "queueScope": {
+                                        "title": "Scope Id",
+                                        "$ref": "#/definitions/queueScope"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            "varType": {
+                "type": "string",
+                "title": "Property Panel",
+                "enum": [
+                    "",
+                    "preChat",
+                    "info",
+                    "context",
+                    "disposition",
+                    "profile",
+                    "escalation-summary"
+                ],
+                "enumNames": [
+                    "Select",
+                    "Pre-Chat",
+                    "Info",
+                    "Context",
+                    "Disposition",
+                    "Profile",
+                    "Escalation summary"
+                ]
+            },
+            "validatorId": {
+                "type": "string",
+                "title": "Property Type",
+                "enum": [],
+                "enumNames": [],
+                "default": ""
+            },
+            "varName": {
+                "title": "Name",
+                "type": "string"
+            },
+            "displayName": {
+                "type": "string",
+                "title": "Display Name"
+            },
+            "varDescription": {
+                "type": "string",
+                "title": "Description",
+                "default": ""
+            },
+            "editableFlag": {
+                "type": "string",
+                "title": "Is Editable",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "True",
+                    "False"
+                ],
+                "default": "true"
+            },
+            "mandatoryFlag": {
+                "type": "string",
+                "title": "Is Mandatory",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "True",
+                    "False"
+                ],
+                "default": "true"
+            },
+            "maskableFlag": {
+                "type": "string",
+                "title": "To Mask Post-Interaction",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "True",
+                    "False"
+                ],
+                "default": "false"
+            },
+            "order": {
+                "type": "string",
+                "title": "Order"
+            }
+        }
+    },
+    "uiSchema": {
+        "ui:order": [
+            "banner",
+            "scope",
+            "key",
+            "varType",
+            "validatorId",
+            "varName",
+            "displayName",
+            "varDescription",
+            "editableFlag",
+            "mandatoryFlag",
+            "maskableFlag",
+            "order"
+        ],
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "PROPERTY_CONFIGURATION_INFOBANNER_TITLE",
+                "bannerDescription": "PROPERTY_CONFIGURATION_INFOTEXT"
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scope": {
+            "scopeType": {
+                "ui:field": "select",
+                "ui:options": {
+                    "fieldSize": [
+                        10,
+                        12
+                    ],
+                    "size": 5,
+                    "styles": {
+                        "container": {
+                            "marginRight": "20px",
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "accountId": {
+                "ui:field": "text",
+                "ui:options": {
+                    "hidden": true,
+                    "fieldSize": [
+                        8,
+                        8
+                    ],
+                    "size": 4,
+                    "styles": {
+                        "container": {
+                            "marginRight": "20px",
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "queueScope": {
+                "ui:field": "select",
+                "ui:options": {
+                    "fieldSize": [
+                        10,
+                        12
+                    ],
+                    "size": 5,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "ui:options": {
+                "disableSeparator": true
+            }
+        },
+        "varType": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "validatorId": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "varName": {
+            "ui:field": "text",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "displayName": {
+            "ui:field": "text",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "varDescription": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "editableFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "10px",
+                        "marginRight": "8px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "mandatoryFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "10px",
+                        "marginRight": "8px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "maskableFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "order": {
+            "ui:field": "text",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "ui:order": [
+            "banner",
+            "scope",
+            "key",
+            "varType",
+            "validatorId",
+            "varName",
+            "displayName",
+            "varDescription",
+            "editableFlag",
+            "mandatoryFlag",
+            "maskableFlag",
+            "order"
+        ],
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "PROPERTY_CONFIGURATION_INFOBANNER_TITLE",
+                "bannerDescription": "PROPERTY_CONFIGURATION_INFOTEXT"
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scope": {
+            "scopeType": {
+                "ui:field": "select",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        10,
+                        12
+                    ],
+                    "size": 5,
+                    "styles": {
+                        "container": {
+                            "marginRight": "20px",
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "accountId": {
+                "ui:field": "text",
+                "ui:options": {
+                    "hidden": true,
+                    "fieldSize": [
+                        8,
+                        8
+                    ],
+                    "size": 4,
+                    "styles": {
+                        "container": {
+                            "marginRight": "20px",
+                            "marginBottom": "15px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "queueScope": {
+                "ui:field": "select",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        10,
+                        12
+                    ],
+                    "size": 5,
+                    "styles": {
+                        "container": {
+                            "marginBottom": "15px",
+                            "marginRight": "20px"
+                        },
+                        "label": {
+                            "marginBottom": "8px"
+                        },
+                        "field": {}
+                    }
+                }
+            },
+            "ui:options": {
+                "disableSeparator": true
+            }
+        },
+        "varType": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "validatorId": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "varName": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "displayName": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "varDescription": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginRight": "20px",
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "editableFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "10px",
+                        "marginRight": "8px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "mandatoryFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "10px",
+                        "marginLeft": "8px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "maskableFlag": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 4,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginLeft": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "order": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "list": {
+            "listQueue": "definitions.queueScope",
+            "listPropertyValidations": "validatorId"
+        },
+        "page": "createPropertyConfig_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

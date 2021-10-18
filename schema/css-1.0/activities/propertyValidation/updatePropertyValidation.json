@@ -1,0 +1,305 @@
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "key": {
+        "type": "string",
+        "title": "key"
+      },
+      "validatorName": {
+        "type": "string",
+        "title": "Name"
+      },
+      "validatorType": {
+        "type": "string",
+        "title": "Type",
+        "enum": [
+          "enum",
+          "regex"
+        ],
+        "enumNames": [
+          "Enumerated",
+          "Regular Expression"
+        ],
+        "default": "enum"
+      }
+    },
+    "dependencies": {
+      "validatorType": {
+        "oneOf": [
+          {
+            "properties": {
+              "validatorType": {
+                "enum": [
+                  "regex"
+                ]
+              },
+              "validatorRule": {
+                "type": "string",
+                "title": "Enter the snippet"
+              }
+            }
+          },
+          {
+            "properties": {
+              "validatorType": {
+                "enum": [
+                  "enum"
+                ]
+              },
+              "enumValues": {
+                "type": "array",
+                "title": "Enumeration list",
+                "items": {
+                  "title": "",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "uiSchema": {
+    "key": {
+      "ui:field": "text",
+      "ui:options": {
+        "hidden": true,
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorName": {
+      "ui:field": "text",
+      "ui:options": {
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorType": {
+      "ui:field": "select",
+      "ui:options": {
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorRule": {
+      "ui:field": "text",
+      "ui:options": {
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "enumValues": {
+      "ui:options": {
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      },
+      "items": {
+        "ui:field": "text",
+        "ui:options": {
+          "inputType": "text",
+          "fieldSize": [
+            6,
+            8
+          ],
+          "styles": {
+            "container": {
+              "marginBottom": "15px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    }
+  },
+  "viewUiSchema": {
+    "key": {
+      "ui:field": "text",
+      "ui:options": {
+        "isDisabled": true,
+        "hidden": true,
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorName": {
+      "ui:field": "text",
+      "ui:options": {
+        "isDisabled": true,
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorType": {
+      "ui:field": "select",
+      "ui:options": {
+        "isDisabled": true,
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "validatorRule": {
+      "ui:field": "text",
+      "ui:options": {
+        "isDisabled": true,
+        "inputType": "text",
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      }
+    },
+    "enumValues": {
+      "ui:options": {
+        "isDisabled": true,
+        "fieldSize": [
+          6,
+          8
+        ],
+        "styles": {
+          "container": {
+            "marginBottom": "15px"
+          },
+          "label": {
+            "marginBottom": "8px"
+          },
+          "field": {}
+        }
+      },
+      "items": {
+        "ui:field": "text",
+        "ui:options": {
+          "isDisabled": true,
+          "inputType": "text",
+          "fieldSize": [
+            6,
+            8
+          ],
+          "styles": {
+            "container": {
+              "marginBottom": "15px"
+            },
+            "label": {
+              "marginBottom": "8px"
+            },
+            "field": {}
+          }
+        }
+      }
+    }
+  },
+  "fetch": {
+    "page": "updatePropertyValidation_p0"
+  },
+  "validation": {
+    "enabled": true,
+    "type": "onchange"
+  }
+}

@@ -1,0 +1,1 @@
+ALTER TABLE self_serve.service_urls ADD headers json DEFAULT NULL AFTER last_updated_on;

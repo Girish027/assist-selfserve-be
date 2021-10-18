@@ -1,0 +1,626 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "queues": {
+                "type": "string",
+                "title": "Queue Id",
+                "default": ""
+            },
+            "queueName": {
+                "type": "string",
+                "title": "Queue Name",
+                "default": ""
+            },
+            "timezone": {
+                "enum": [],
+                "type": "string",
+                "title": "Time Zone",
+                "enumNames": []
+            },
+            "weekdays": {
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "supportweekdays": {
+                        "type": "array",
+                        "title": "Support Hours",
+                        "default": [
+                            {
+                                "slots": [],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [
+                                    {
+                                        "end": "18:00",
+                                        "start": "09:00"
+                                    }
+                                ],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [
+                                    {
+                                        "end": "18:00",
+                                        "start": "09:00"
+                                    }
+                                ],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [
+                                    {
+                                        "end": "18:00",
+                                        "start": "09:00"
+                                    }
+                                ],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [
+                                    {
+                                        "end": "18:00",
+                                        "start": "09:00"
+                                    }
+                                ],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [
+                                    {
+                                        "end": "18:00",
+                                        "start": "09:00"
+                                    }
+                                ],
+                                "openAllDay": false
+                            },
+                            {
+                                "slots": [],
+                                "openAllDay": false
+                            }
+                        ]
+                    }
+                }
+            },
+            "exceptions": {
+                "type": "object",
+                "title": "",
+                "properties": {
+                    "supportExceptionsInfo": {
+                        "type": "string",
+                        "title": "Mark the days when chat hours would be overridden either due to holiday or exceptional working hours"
+                    },
+                    "supportexceptionsSection": {
+                        "type": "object",
+                        "title": "",
+                        "properties": {
+                            "supportexceptions": {
+                                "type": "array",
+                                "default": []
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Configure Agent Hours of Operations at a Queue-level, schedule for later as well. ",
+                "bannerDescription": "An admin can configure Hours of Operation for Messaging queues here. No more manual intervention when DST kicks in. To update Hours of Operations for the Live Chat Queues, please refer to Palette.\n Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "queues": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true,
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "queueName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "timezone": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "weekdays": {
+            "supportweekdays": {
+                "ui:field": "supportweekdays",
+                "ui:options": {
+                    "fieldSize": [
+                        8,
+                        8
+                    ],
+                    "styles": {
+                        "row": {
+                            "rowHeader": {
+                                "width": "17%"
+                            },
+                            "slots": {
+                                "width": "68%"
+                            },
+                            "switch": {
+                                "width": "12%",
+                                "marginLeft": 0,
+                                "float": "right",
+                                "textAlign": "right"
+                            },
+                            "timeRange": {
+                                "startTime": {
+                                    "width": "36.48%"
+                                },
+                                "separator": {
+                                    "width": "8.33%"
+                                },
+                                "endTime": {
+                                    "width": "36.48%"
+                                },
+                                "remove": {
+                                    "width": "8.33%",
+                                    "marginLeft": "1%"
+                                },
+                                "add": {
+                                    "width": "8.33%",
+                                    "marginLeft": "1%"
+                                },
+                                "openAllDay": {
+                                    "width": "89%",
+                                    "paddingLeft": "11%",
+                                    "textAlign": "center"
+                                },
+                                "contolSeparator": {
+                                    "display": "none"
+                                }
+                            }
+                        },
+                        "header": {
+                            "titleHeader": {
+                                "width": "17%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold"
+                            },
+                            "rangeHeader": {
+                                "textAlign": "center",
+                                "width": "68%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold"
+                            },
+                            "dayHeader": {
+                                "marginLeft": 0,
+                                "float": "right",
+                                "width": "12%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold",
+                                "textAlign": "right"
+                            }
+                        },
+                        "footer": {}
+                    }
+                }
+            },
+            "ui:options": {
+                "size": 8,
+                "disableSeparator": true
+            }
+        },
+        "exceptions": {
+            "supportExceptionsInfo": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        0
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginTop": "30px"
+                        },
+                        "field": {
+                            "fontWeight": "normal"
+                        }
+                    }
+                }
+            },
+            "supportexceptionsSection": {
+                "supportexceptions": {
+                    "ui:field": "supportexceptions",
+                    "ui:options": {
+                        "fieldSize": [
+                            8,
+                            8
+                        ],
+                        "styles": {
+                            "row": {
+                                "rowHeader": {
+                                    "width": "28%"
+                                },
+                                "slots": {
+                                    "width": "55%"
+                                },
+                                "switch": {
+                                    "width": "17%",
+                                    "marginLeft": 0,
+                                    "float": "right",
+                                    "textAlign": "right"
+                                },
+                                "timeRange": {
+                                    "startTime": {
+                                        "width": "36.48%"
+                                    },
+                                    "separator": {
+                                        "width": "8.33%"
+                                    },
+                                    "endTime": {
+                                        "width": "36.48%"
+                                    },
+                                    "remove": {
+                                        "width": "8.33%",
+                                        "marginLeft": "1%"
+                                    },
+                                    "add": {
+                                        "width": "8.33%",
+                                        "marginLeft": "1%"
+                                    },
+                                    "openAllDay": {
+                                        "width": "89%",
+                                        "paddingLeft": "11%",
+                                        "textAlign": "center"
+                                    },
+                                    "contolSeparator": {
+                                        "display": "none"
+                                    }
+                                }
+                            },
+                            "header": {
+                                "titleHeader": {
+                                    "width": "28%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold"
+                                },
+                                "rangeHeader": {
+                                    "textAlign": "center",
+                                    "width": "55%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold"
+                                },
+                                "dayHeader": {
+                                    "marginLeft": 0,
+                                    "float": "right",
+                                    "width": "17%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold",
+                                    "textAlign": "right"
+                                }
+                            },
+                            "footer": {}
+                        }
+                    }
+                },
+                "ui:options": {
+                    "disableSeparator": true
+                }
+            },
+            "ui:options": {
+                "size": 9,
+                "disableSeparator": true
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Configure Agent Hours of Operations at a Queue-level, schedule for later as well. ",
+                "bannerDescription": "An admin can configure Hours of Operation for Messaging queues here. No more manual intervention when DST kicks in. To update Hours of Operations for the Live Chat Queues, please refer to Palette.\n Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "queues": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true,
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "queueName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "timezone": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "weekdays": {
+            "supportweekdays": {
+                "ui:field": "supportweekdays",
+                "ui:options": {
+                    "isDisabled": true,
+                    "fieldSize": [
+                        8,
+                        8
+                    ],
+                    "styles": {
+                        "row": {
+                            "rowHeader": {
+                                "width": "17%"
+                            },
+                            "slots": {
+                                "width": "68%"
+                            },
+                            "switch": {
+                                "width": "12%",
+                                "marginLeft": 0,
+                                "float": "right",
+                                "textAlign": "right"
+                            },
+                            "timeRange": {
+                                "startTime": {
+                                    "width": "36.48%"
+                                },
+                                "separator": {
+                                    "width": "8.33%"
+                                },
+                                "endTime": {
+                                    "width": "36.48%"
+                                },
+                                "remove": {
+                                    "width": "8.33%",
+                                    "marginLeft": "1%"
+                                },
+                                "add": {
+                                    "width": "8.33%",
+                                    "marginLeft": "1%"
+                                },
+                                "openAllDay": {
+                                    "width": "89%",
+                                    "paddingLeft": "11%",
+                                    "textAlign": "center"
+                                },
+                                "contolSeparator": {
+                                    "display": "none"
+                                }
+                            }
+                        },
+                        "header": {
+                            "titleHeader": {
+                                "width": "17%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold"
+                            },
+                            "rangeHeader": {
+                                "textAlign": "center",
+                                "width": "68%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold"
+                            },
+                            "dayHeader": {
+                                "marginLeft": 0,
+                                "float": "right",
+                                "width": "12%",
+                                "marginBottom": "8px",
+                                "fontWeight": "bold",
+                                "textAlign": "right"
+                            }
+                        },
+                        "footer": {}
+                    }
+                }
+            },
+            "ui:options": {
+                "size": 8,
+                "disableSeparator": true
+            }
+        },
+        "exceptions": {
+            "supportExceptionsInfo": {
+                "ui:field": "plaintext",
+                "ui:options": {
+                    "fieldSize": [
+                        12,
+                        0
+                    ],
+                    "styles": {
+                        "container": {
+                            "marginTop": "30px"
+                        },
+                        "field": {
+                            "fontWeight": "normal"
+                        }
+                    }
+                }
+            },
+            "supportexceptionsSection": {
+                "supportexceptions": {
+                    "ui:field": "supportexceptions",
+                    "ui:options": {
+                        "isDisabled": true,
+                        "fieldSize": [
+                            8,
+                            8
+                        ],
+                        "styles": {
+                            "row": {
+                                "rowHeader": {
+                                    "width": "28%"
+                                },
+                                "slots": {
+                                    "width": "55%"
+                                },
+                                "switch": {
+                                    "width": "17%",
+                                    "marginLeft": 0,
+                                    "float": "right",
+                                    "textAlign": "right"
+                                },
+                                "timeRange": {
+                                    "startTime": {
+                                        "width": "36.48%"
+                                    },
+                                    "separator": {
+                                        "width": "8.33%"
+                                    },
+                                    "endTime": {
+                                        "width": "36.48%"
+                                    },
+                                    "remove": {
+                                        "width": "8.33%",
+                                        "marginLeft": "1%"
+                                    },
+                                    "add": {
+                                        "width": "8.33%",
+                                        "marginLeft": "1%"
+                                    },
+                                    "openAllDay": {
+                                        "width": "89%",
+                                        "paddingLeft": "11%",
+                                        "textAlign": "center"
+                                    },
+                                    "contolSeparator": {
+                                        "display": "none"
+                                    }
+                                }
+                            },
+                            "header": {
+                                "titleHeader": {
+                                    "width": "28%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold"
+                                },
+                                "rangeHeader": {
+                                    "textAlign": "center",
+                                    "width": "55%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold"
+                                },
+                                "dayHeader": {
+                                    "marginLeft": 0,
+                                    "float": "right",
+                                    "width": "17%",
+                                    "marginBottom": "8px",
+                                    "fontWeight": "bold",
+                                    "textAlign": "right"
+                                }
+                            },
+                            "footer": {}
+                        }
+                    }
+                },
+                "ui:options": {
+                    "disableSeparator": true
+                }
+            },
+            "ui:options": {
+                "size": 9,
+                "disableSeparator": true
+            }
+        }
+    },
+    "fetch": {
+        "list": {
+            "listTimezone": "timezone"
+        },
+        "page": "chathours_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

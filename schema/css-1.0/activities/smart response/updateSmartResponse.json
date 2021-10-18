@@ -1,0 +1,257 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            },
+            "scope": {
+                "title": "Scope",
+                "type": "string",
+                "enum": [
+                    "account"
+                ],
+                "enumNames": [
+                    "Account"
+                ],
+                "default": "Account"
+            },
+            "scopeId": {
+                "title": "Scope ID",
+                "type": "string",
+                "default": ""
+            },
+            "tags": {
+                "title": "Tags",
+                "type": "string",
+                "default": ""
+            },
+            "responseText": {
+                "title": "Response Text",
+                "type": "string",
+                "default": ""
+            }
+        }
+    },
+    "uiSchema": {
+        "id": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "scope": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "10px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scopeId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "tags": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Unique Tag Name. Cannot be longer than 50 characters and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "responseText": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "placeholder": "Enter Text",
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "id": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {},
+                    "label": {},
+                    "field": {}
+                }
+            }
+        },
+        "scope": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "10px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "scopeId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "tags": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "inputType": "text",
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Unique Tag Name. Cannot be longer than 50 characters and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "responseText": {
+            "ui:field": "textarea",
+            "ui:options": {
+                "isDisabled": true,
+                "placeholder": "Enter Text",
+                "fieldSize": [
+                    7,
+                    7
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateSmartResponse_p0"
+    },
+    "validation": {
+        "enabled" :true,
+        "type" : "onchange"
+    }
+}

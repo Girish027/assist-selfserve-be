@@ -1,0 +1,209 @@
+{
+    "schema": {
+        "type": "object",
+        "required": [
+            "teamName"
+        ],
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "teamId": {
+                "type": "string",
+                "title": "Team Id"
+            },
+            "teamName": {
+                "type": "string",
+                "title": "Team Name",
+                "maxLength": 50,
+                "pattern": "^[0-9a-zA-Z._ -]+[0-9a-zA-Z._-]+$"
+            },
+            "teamTags": {
+                "type": "array",
+                "description": "Selected tags should be in live state before publishing this configuration to live",
+                "items": {
+                    "type": "string",
+                    "anyOf": [
+                        {
+                            "enum": [],
+                            "type": "string",
+                            "enumNames": []
+                        }
+                    ],
+                    "title": "Not Selected"
+                },
+                "title": "Select Tags",
+                "default": []
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Leads, and agents all belong to a team.",
+                "bannerDescription": "Group your Agents by Teams to track performance. Map Agents to right Team in Advanced Admin. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "teamId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "teamName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Unique Team Name. Cannot be longer than 50 characters and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "teamTags": {
+            "ui:field": "multiselect",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Leads, and agents all belong to a team.",
+                "bannerDescription": "Group your Agents by Teams to track performance. Map Agents to right Team in Advanced Admin. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "teamId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "teamName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "teamTags": {
+            "ui:field": "multiselect",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "list": {
+            "listTag": "teamTags"
+        },
+        "page": "updateTeams_p0"
+    },
+    "validation": {
+        "enabled" :true,
+        "type" : "onchange"
+    }
+}

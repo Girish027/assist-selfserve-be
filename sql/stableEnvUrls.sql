@@ -1,0 +1,10 @@
+update `service_urls` set baseurl='http://localhost/cobp-service' where id=1;
+update `service_urls` set baseurl='http://dev-predictioncon02.app.shared.int.sv2.247-inc.net' where id=2;
+update `service_urls` set baseurl='https://qa.api.sv2.247-inc.net', headers='{\"apikey\": \"KtbDtdYYb7EUD4oajYCM8l9Nh7L0AgEc\"}' where id=3;
+update `service_urls` set baseurl='http://stable-predictioncon01.app.shared.int.sv2.247-inc.net/adminconsole/rest/domainwhitelist/test' where id=4;
+update `service_urls` set baseurl='http://appglobal.qacore2.assist.int.lb-priv.sv2.247-inc.net' where id=5;
+update `service_urls` set baseurl='https://stable.api.sv2.247-inc.net', headers='{\"apikey\": \"KtbDtdYYb7EUD4oajYCM8l9Nh7L0AgEc\"}' where id=6;
+update `service_urls` set baseurl='https://central.247-inc.net/adminconsole/rest/domainwhitelist/live' where id=7;
+update `service_urls` set baseurl='http://appglobal.stablee2e.assist.int.lb-priv.sv2.247-inc.net' where id=8;
+update `service_urls` set baseurl='http://{clientId}.portal.qacore2.assist.247-inc.net' where id=9;
+update `service_urls` set baseurl='http://{clientId}.portal.stablee2e.assist.247-inc.net' where id=10;

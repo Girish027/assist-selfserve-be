@@ -1,0 +1,257 @@
+{
+    "schema": {
+        "type": "object",
+        "required": [
+            "notificationKeywordList"
+        ],
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "key": {
+                "type": "string",
+                "title": "Key"
+            },
+            "notificationName": {
+                "type": "string",
+                "title": "Name",
+                "maxLength": 50,
+                "pattern": "^[0-9a-zA-Z._-]+$"
+            },
+            "notificationStatus": {
+                "type": "boolean",
+                "title": "Status",
+                "enum": [
+                    true,
+                    false
+                ],
+                "enumNames": [
+                    "Enable",
+                    "Disable"
+                ],
+                "default": true
+            },
+            "notificationKeywordList": {
+                "type": "string",
+                "title": "Trigger Keywords"
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "hidden": true,
+                "size": 10,
+                "bannerTitle": "KEYWORD_ALERTS_INFOBANNER_TITLE",
+                "bannerDescription": "KEYWORD_ALERTS_INFOTEXT"
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "notificationName": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "width": "80%",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "notificationStatus": {
+            "ui:field": "radio",
+            "ui:options": {
+                "displayType": "horizontal",
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "notificationKeywordList": {
+            "ui:field": "messageFilter",
+            "ui:options": {
+                "inputType": "chooseFile",
+                "fileReadType": "text",
+                "mediaType": "text",
+                "maxFileSizeInMb": 5,
+                "placeholder": "Enter keywords separated by commas",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "KEYWORD_ALERTS_INFOBANNER_TITLE",
+                "bannerDescription": "KEYWORD_ALERTS_INFOTEXT"
+            }
+        },
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "notificationName": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "size": 10,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "width": "80%",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "notificationStatus": {
+            "ui:field": "radio",
+            "ui:options": {
+                "isDisabled": true,
+                "displayType": "horizontal",
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 3,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "notificationKeywordList": {
+            "ui:field": "messageFilter",
+            "ui:options": {
+                "inputType": "chooseFile",
+                "isDisabled": "true",
+                "hiddenRow": "true",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateMsgFilter_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

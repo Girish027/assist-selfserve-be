@@ -1,0 +1,170 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "key": {
+                "type": "string",
+                "default": ""
+            },
+            "expression": {
+                "type": "string",
+                "title": "SESSION_TIMEOUT_TITLE"
+            },
+            "timeout": {
+                "type": "string",
+                "title": "Visitor timeout",
+                "enum": [
+                    "30",
+                    "60",
+                    "120",
+                    "180",
+                    "300"
+                ],
+                "enumNames": [
+                    "30",
+                    "60",
+                    "120",
+                    "180",
+                    "300"
+                ],
+                "default": "30"
+            }
+        }
+    },
+    "uiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "expression": {
+            "ui:field": "ruleBuilder",
+            "ui:options": {
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "RuleBuilderTitle": "Expression Builder",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginTop": "-15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px",
+                        "marginTop": "-5px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "timeout": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": false,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "hidden": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 12,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "expression": {
+            "ui:field": "ruleBuilder",
+            "ui:options": {
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "RuleBuilderTitle": "Expression Builder",
+                "isDisabled": true,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginTop": "-15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px",
+                        "marginTop": "-5px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "timeout": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    8,
+                    8
+                ],
+                "size": 5,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateSessionTimeout_p0",
+        "list": {
+            "listProperty": "expression"
+        }
+    },
+    "validation": null
+}

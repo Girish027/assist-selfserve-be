@@ -1,0 +1,197 @@
+{
+    "schema": {
+        "type": "object",
+        "required": [
+            "tagName"
+        ],
+        "properties": {
+            "banner": {
+                "type": "string"
+            },
+            "tagId": {
+                "type": "string",
+                "title": "Tag Id",
+                "default": ""
+            },
+            "tagName": {
+                "type": "string",
+                "title": "Tag Name",
+                "maxLength": 50,
+                "pattern": "^[0-9a-zA-Z._ -]+[0-9a-zA-Z._-]+$"
+            },
+            "tagType": {
+                "type": "string",
+                "title": "Tag Type",
+                "default": "",
+                "pattern": "^[0-9a-zA-Z._ -]+$"
+            }
+        }
+    },
+    "uiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Tags can be used to achieve restricted access to Team Reports.",
+                "bannerDescription": "Associate Tags to Users and Teams to achieve restricted access to Team reports. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "tagId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "tagName": {
+            "ui:field": "text",
+            "ui:options": {
+                "isDisabled": true,
+                "inputType": "text",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "tooltipTrigger": "hover",
+                "validationError": "Unique Tag Name. Cannot be longer than 50 characters and . _ - special characters are allowed",
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "tagType": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "banner": {
+            "ui:field": "infobanner",
+            "ui:options": {
+                "size": 10,
+                "bannerTitle": "Tags can be used to achieve restricted access to Team Reports.",
+                "bannerDescription": "Associate Tags to Users and Teams to achieve restricted access to Team reports. Learn more at the <a href='https://engage.247.ai/docportal/Content/Assist/Assist.htm' target='_blank'>[24]7 Product Documentation</a>"
+            }
+        },
+        "tagId": {
+            "ui:field": "plaintext",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {
+                        "fontWeight": "normal",
+                        "border": "1px solid rgb(220, 225, 232)",
+                        "borderRadius": 2,
+                        "height": 40,
+                        "margin": 0,
+                        "padding": 8,
+                        "cursor": "not-allowed",
+                        "background-color": "rgb(235,235,228)",
+                        "opacity": 1,
+                        "line-height": 24
+                    }
+                }
+            }
+        },
+        "tagName": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "tagType": {
+            "ui:field": "text",
+            "ui:options": {
+                "inputType": "text",
+                "isDisabled": true,
+                "fieldSize": [
+                    6,
+                    8
+                ],
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "updateTags_p0"
+    },
+    "validation": {
+        "enabled" :true,
+        "type" : "onchange"
+    }
+}

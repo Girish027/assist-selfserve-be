@@ -1,0 +1,23 @@
+USE `self_serve`;
+
+INSERT INTO `action` VALUES(5,'default.user','2019-09-19 17:37:31.168947','default.user','2019-09-19 17:37:31.168947','{"type": "REST", "method": "POST", "headers": {"Content-Type": "application/json"}, "serviceId": "localpc", "relativePath": "/${clientId}", "bodyDefinition": {}, "objectTranslator":  "function translate( pageData, entityId,clientId , accountId, env){ var inviteData = JSON.parse(pageData).proactiveInvite_p0; inviteData.postCondition = inviteData.rules; inviteData.condition = inviteData.rules; inviteData.app = inviteData.where; inviteData.name = inviteData.scenarioName; return JSON.stringify(inviteData);}"}','create queue action','REST');
+INSERT INTO `self_serve`.`entity_template` (`id`, `created_by`, `created_on`, `last_updated_by`, `last_updated_on`, `name`) VALUES ('5', 'default.user', '2019-08-08 14:17:12.404294', 'default.user', '2019-08-08 14:17:12.404294', 'sectionName');
+INSERT INTO `workflow_template` VALUES('proactiveInvite','default.user','2019-11-11 13:50:29.862585','default.user','2019-11-11 13:50:29.862585','Proactive Invite Trigger','proactiveInvite_p0.scenarioName','MENU',_binary '','Proactive Invite Trigger','NON_SINGLETON',5);
+INSERT INTO `action_workflow` VALUES(5,'default.user','2019-11-11 17:44:15.136579','default.user','2019-11-11 17:44:15.136579',5,'proactiveInvite');
+INSERT INTO `service` VALUES('localpc','default.user','2019-06-03 19:42:21.000000','default.user','2019-06-03 19:42:21.000000','Local PC','Local PC'),
+('localude','default.user','2019-06-03 19:42:21.000000','default.user','2019-06-03 19:42:21.000000','Local UDE','Local UDE'),('assistconsole','default.user','2019-06-13 12:11:09','default.user','2019-06-13 12:11:09','Assist Admin console','Assist Admin console');
+INSERT INTO `service_urls` VALUES
+(11,'default.user','2019-06-13 12:13:02.000000','default.user','2019-06-13 12:13:02.000000','{}', 'https://central.247-inc.net/adminconsole/rest/flowcssinvite/stage','TEST','localpc'),
+(12,'default.user','2019-06-13 12:13:02.000000','default.user','2019-06-13 12:13:02.000000','{}', 'https://central.247-inc.net/adminconsole/rest/flowcssinvite/prod','LIVE','localpc'),
+(13,'default.user','2019-06-13 12:13:02','default.user','2019-06-13 12:13:02','{}','https://${clientId}.portal.assist.staging.247-inc.net/en/console?forceLocalAuth=true ','TEST','assistconsole'),
+(14,'default.user','2019-06-13 12:13:02','default.user','2019-06-13 12:13:02','{}','https://${clientId}.portal.assist.247-inc.net/en/console?forceLocalAuth=true ','LIVE','assistconsole');
+
+INSERT INTO `fetch_config_template` VALUES
+(7,'default.user','2019-11-11 12:24:46.000000','default.user','2019-11-11 12:24:46.000000','listInvite','{}','{\"contexts\": [\"accountId\", \"clientId\"]}','clients/${clientId}/accounts/${accountId}/applications','{\"objectTranslator\": \"function translate(values) { var newValues = JSON.parse(value); var names = []; for (var i = 0; i < newValues.length; i++) {names.push(newValues[i].name); } return JSON.stringify(names);}\"}','JS','FIELD_OPTIONS','localude');
+
+INSERT INTO `page_template` VALUES
+('proactiveInvite_p0','default.user','2019-12-10 14:06:42.713766','anwesh.mishra@247-inc.com','2019-11-10 11:23:10.848661','{"schema":{"type":"object","title":"Proactive Invite Trigger","properties":{"scenarioName":{"type":"string","title":"Enter Section Name"},"queue":{"type":"array","items":{"enum":[],"type":"string","title":"Select","enumNames":[]},"title":"Select Queues","default":[]},"where":{"type":"string","title":"Enter App ID"},"invite":{"type":"string","title":"Enter Invite ID"},"rules":{"type":"string","title":"Enter Rules"}},"description":"New Section"},"uiSchema":{"scenarioName":{"ui:field":"text","ui:options":{"inputType":"text"}},"queue":{"ui:field":"multiselect"},"invite":{"ui:field":"text","ui:options":{"inputType":"text"}},"where":{"ui:field":"text","ui:options":{"inputType":"text"}},"rules":{"ui:field":"text","ui:options":{"inputType":"text"}}},"fetch":{"list":{"listQueue":"queue"},"page":"proactiveInvite_p0"}}','Proactive Invite for chats','Update Teams');
+
+INSERT INTO `workflow_page` VALUES
+(5,'default.user','2019-11-11 14:24:45.621475','default.user','2019-11-11 14:24:45.621475',1,'','proactiveInvite_p0','proactiveInvite');
+INSERT INTO `bookmark` VALUES (1,'default.user','2019-06-13 12:11:09','default.user','2019-06-13 12:11:09','Assist Console','TEST Admin Console',' ',13),(2,'default.user','2019-06-13 12:11:09','default.user','2019-06-13 12:11:09','Assist Console','LIVE Admin Console',' ',14);

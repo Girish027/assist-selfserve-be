@@ -1,0 +1,372 @@
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "key": {
+                "type": "string",
+                "title": ""
+            },
+            "accountId": {
+                "type": "string",
+                "title": ""
+            },
+            "scopeType": {
+                "type": "string",
+                "title": ""
+            },
+            "scopeValue": {
+                "type": "string",
+                "title": ""
+            },
+            "filterType": {
+                "type": "string",
+                "title": "Filter Type",
+                "enum": [
+                    "blacklist",
+                    "whitelist"
+                ],
+                "enumNames": [
+                    "Blacklist",
+                    "Whitelist"
+                ],
+                "default": "blacklist"
+            },
+            "enabled": {
+                "type": "string",
+                "title": "Enabled",
+                "default": "true",
+                "enum": [
+                    "true",
+                    "false"
+                ],
+                "enumNames": [
+                    "True",
+                    "False"
+                ]
+            },
+            "filterConfig": {
+                "type": "array",
+                "minItems": 1,
+                "title": "",
+                "items": {
+                    "properties": {
+                        "urlFilterConfigId": {
+                            "type": "string",
+                            "title": ""
+                        },
+                        "filterText": {
+                            "title": "Filter Text",
+                            "type": "string",
+                            "default": ""
+                        },
+                        "filterOptions": {
+                            "title": "Filter Options",
+                            "type": "string",
+                            "enum": [
+                                "STARTS_WITH",
+                                "REGEX",
+                                "EXACT_MATCH"
+                            ],
+                            "enumNames": [
+                                "Starts with",
+                                "Reg Ex",
+                                "Exact match"
+                            ],
+                            "default": "STARTS_WITH"
+                        },
+                        "urlConfigDeleted": {
+                            "type": "boolean",
+                            "enum": [
+                                true,
+                                false
+                            ],
+                            "enumNames": [
+                                "True",
+                                "False"
+                            ],
+                            "default": false
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "uiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "accountId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "scopeType": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "scopeValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "filterType": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 2,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "select",
+            "ui:options": {
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 2,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "filterConfig": {
+            "items": {
+                "urlFilterConfigId": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "hidden": true
+                    }
+                },
+                "filterText": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "inputType": "text",
+                        "fieldSize": [
+                            10,
+                            12
+                        ],
+                        "size": 9,
+                        "styles": {
+                            "container": {
+                                "marginBottom": "15px",
+                                "marginRight": "20px"
+                            },
+                            "label": {
+                                "marginBottom": "8px"
+                            },
+                            "field": {}
+                        }
+                    }
+                },
+                "filterOptions": {
+                    "ui:field": "select",
+                    "ui:options": {
+                        "fieldSize": [
+                            10,
+                            12
+                        ],
+                        "size": 3,
+                        "styles": {
+                            "container": {
+                                "marginBottom": "15px",
+                                "marginRight": "20px"
+                            },
+                            "label": {
+                                "marginBottom": "8px"
+                            },
+                            "field": {}
+                        }
+                    }
+                },
+                "urlConfigDeleted": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "hidden": true
+                    }
+                },
+                "ui:options": {
+                    "disableSeparator": true
+                }
+            },
+            "ui:options": {
+                "disableSeparator": true,
+                "styles": {
+                    "addButton": {},
+                    "removeButton": {}
+                }
+            }
+        }
+    },
+    "viewUiSchema": {
+        "key": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "accountId": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "scopeType": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "scopeValue": {
+            "ui:field": "text",
+            "ui:options": {
+                "hidden": true
+            }
+        },
+        "filterType": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 2,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "enabled": {
+            "ui:field": "select",
+            "ui:options": {
+                "isDisabled": true,
+                "fieldSize": [
+                    10,
+                    12
+                ],
+                "size": 2,
+                "styles": {
+                    "container": {
+                        "marginBottom": "15px",
+                        "marginRight": "20px"
+                    },
+                    "label": {
+                        "marginBottom": "8px"
+                    },
+                    "field": {}
+                }
+            }
+        },
+        "filterConfig": {
+            "items": {
+                "urlFilterConfigId": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "hidden": true
+                    }
+                },
+                "filterText": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "inputType": "text",
+                        "fieldSize": [
+                            10,
+                            12
+                        ],
+                        "size": 9,
+                        "isDisabled": true,
+                        "styles": {
+                            "container": {
+                                "marginBottom": "15px",
+                                "marginRight": "20px"
+                            },
+                            "label": {
+                                "marginBottom": "8px"
+                            },
+                            "field": {}
+                        }
+                    }
+                },
+                "filterOptions": {
+                    "ui:field": "select",
+                    "ui:options": {
+                        "fieldSize": [
+                            10,
+                            12
+                        ],
+                        "size": 3,
+                        "isDisabled": true,
+                        "styles": {
+                            "container": {
+                                "marginBottom": "15px",
+                                "marginRight": "20px"
+                            },
+                            "label": {
+                                "marginBottom": "8px"
+                            },
+                            "field": {}
+                        }
+                    }
+                },
+                "urlConfigDeleted": {
+                    "ui:field": "text",
+                    "ui:options": {
+                        "hidden": true
+                    }
+                },
+                "ui:options": {
+                    "disableSeparator": true
+                }
+            },
+            "ui:options": {
+                "disableSeparator": true,
+                "isDisabled": true,
+                "styles": {
+                    "addButton": {},
+                    "removeButton": {}
+                }
+            }
+        }
+    },
+    "fetch": {
+        "page": "authorisedUrls_p0"
+    },
+    "validation": {
+        "enabled": true,
+        "type": "onchange"
+    }
+}

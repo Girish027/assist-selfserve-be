@@ -1,0 +1,12 @@
+package com.tfsc.ilabs.selfservice.common.models;
+
+public enum PermissionType {
+    PORTAL_PROMOTION_MONITOR_VIEW,
+    PORTAL_CLIENT_PICKER_EDIT,
+    ACTIVITY_DRAFT_CREATE,
+    ACTIVITY_DRAFT_EDIT,
+    ACTIVITY_TEST_PUBLISH,
+    ACTIVITY_LIVE_PUBLISH,
+    ACTIVITY_DRAFT_DISCARD,
+    ACTIVITY_TEST_DISCARD;
+}

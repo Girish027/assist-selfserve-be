@@ -1,0 +1,10 @@
+update `service_urls` set baseurl='http://localhost/cobp-service' where id=1;
+update `service_urls` set baseurl='https://central.247-inc.net' where id=2;
+update `service_urls` set baseurl='https://staging.api.247-inc.net', headers='{\"apikey\": \"8UjizUNm8jcN4lZgsReIgUGXeqbctjYT\"}' where id=3;
+update `service_urls` set baseurl='https://central.247-inc.net/adminconsole/rest/domainwhitelist/test' where id=4;
+update `service_urls` set baseurl='https://${clientId}.portal.assist.staging.247-inc.net' where id=5;
+update `service_urls` set baseurl='https://api.247-inc.net', headers='{\"apikey\": \"8UjizUNm8jcN4lZgsReIgUGXeqbctjYT\"}' where id=6;
+update `service_urls` set baseurl='https://central.247-inc.net/adminconsole/rest/domainwhitelist/live' where id=7;
+update `service_urls` set baseurl='https://${clientId}.portal.assist.247-inc.net' where id=8;
+update `service_urls` set baseurl='https://{clientId}.portal.assist.staging.247-inc.net' where id=9;
+update `service_urls` set baseurl='https://{clientId}.portal.assist.247-inc.net' where id=10;
